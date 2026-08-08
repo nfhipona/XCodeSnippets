@@ -15,7 +15,7 @@ echo "⚙️  Starting SymLink configuration for '$xcodesnippets'"
 
 # if exists, copy current snippets found in ~/Library/Developer/Xcode/UserData/CodeSnippets/
 echo "↳ Checking for current user's snippets... 🫆🕵️‍♂️"
-if [ ! -z "$(ls -A $symlinkdirectory | grep $filter)" ]; then
+if [ ! -z "$(ls -A $symlinkdirectory 2>/dev/null | grep $filter)" ]; then
     echo ""
     echo "🎉 Snippets found ‼️"
     echo "📝 Lists of snippets found on path '$symlinkdirectory':"
