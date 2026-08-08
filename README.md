@@ -26,12 +26,13 @@ Make sure to rerun `setup.sh` if you manually add code snippet files to this fol
 
 <details>
   <summary>View</summary>
-  
+  <img width="1505" height="549" alt="Screenshot 2026-08-09 at 02 42 35" src="https://github.com/user-attachments/assets/9d3449a8-39d5-47be-ab9e-bc33adc72bc5" />
+  <img width="1791" height="752" alt="Screenshot 2026-08-09 at 02 43 19" src="https://github.com/user-attachments/assets/2c1defe7-f02e-42d1-bc2a-f4a5d742ce5c" />
 </details>
 
 ### Others
 
 <details>
   <summary>View</summary>
-  
+  <img width="1556" height="701" alt="Screenshot 2026-08-09 at 02 19 09" src="https://github.com/user-attachments/assets/eb952161-de43-46f2-90ab-85f62d32d654" />
 </details>
