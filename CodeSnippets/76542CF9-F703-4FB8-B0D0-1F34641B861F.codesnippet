@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/// Nested Decodable Conformance
+/// https://developer.apple.com/documentation/foundation/encoding-and-decoding-custom-types
+extension &lt;#ModelName#&gt;: Decodable {
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        &lt;#nameProperty#&gt; = try values.decode(String.self, forKey: .&lt;#nameProperty#&gt;)
+        &lt;#descriptionProperty#&gt; = try values.decodeIfPresent(String.self, forKey: .&lt;#descriptionProperty#&gt;)
+
+        let &lt;#nestedValues#&gt; = try values.nestedContainer(keyedBy: &lt;#NestedInfoKeys#&gt;.self, forKey: .&lt;#nestedDataKey#&gt;)
+        &lt;#nestedNameKey#&gt; = try &lt;#nestedValues#&gt;.decode(String.self, forKey: .&lt;#nestedNameKey#&gt;)
+        &lt;#nestedDescriptionKey#&gt; = try &lt;#nestedValues#&gt;.decodeIfPresent(String.self, forKey: .&lt;#nestedDescriptionKey#&gt;)
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>76542CF9-F703-4FB8-B0D0-1F34641B861F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Creates a nested Decodable template. This moves nested properties to the top level properties.</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Nested Decodable Snippet</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

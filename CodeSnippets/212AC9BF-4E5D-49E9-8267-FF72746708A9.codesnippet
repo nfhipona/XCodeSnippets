@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/// Nested Codable Template
+/// https://developer.apple.com/documentation/foundation/encoding-and-decoding-custom-types
+extension &lt;#ModelName#&gt; {
+    enum CodingKeys: String, CodingKey {
+        case &lt;#nameKey#&gt; = "title"
+        case &lt;#descriptionKey#&gt; = "desc"
+        case &lt;#nestedDataKey#&gt;
+    }
+
+    enum &lt;#NestedInfoKeys#&gt;: String, CodingKey {
+    case &lt;#nestedNameKey#&gt; = "title"
+    case &lt;#nestedDescriptionKey#&gt; = "desc"
+    }
+}
+
+/// Decodable Conformance
+extension &lt;#ModelName#&gt;: Decodable {
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        &lt;#nameProperty#&gt; = try values.decode(String.self, forKey: .&lt;#nameProperty#&gt;)
+        &lt;#descriptionProperty#&gt; = try values.decodeIfPresent(String.self, forKey: .&lt;#descriptionProperty#&gt;)
+
+        let &lt;#nestedValues#&gt; = try values.nestedContainer(keyedBy: &lt;#NestedInfoKeys#&gt;.self, forKey: .&lt;#nestedDataKey#&gt;)
+        &lt;#nestedNameKey#&gt; = try &lt;#nestedValues#&gt;.decode(String.self, forKey: .&lt;#nestedNameKey#&gt;)
+        &lt;#nestedDescriptionKey#&gt; = try &lt;#nestedValues#&gt;.decodeIfPresent(String.self, forKey: .&lt;#nestedDescriptionKey#&gt;)
+    }
+}
+
+/// Encodable Conformance
+extension &lt;#ModelName#&gt;: Encodable {
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(&lt;#nameProperty#&gt;, forKey: .&lt;#nameProperty#&gt;)
+        try container.encode(&lt;#descriptionProperty#&gt;, forKey: .&lt;#descriptionProperty#&gt;)
+
+        var &lt;#nestedContainer#&gt; = container.nestedContainer(keyedBy: &lt;#NestedInfoKeys#&gt;.self, forKey: .&lt;#nestedDataKey#&gt;)
+        try &lt;#nestedContainer#&gt;.encode(&lt;#nestedNameKey#&gt;, forKey: .&lt;#nestedNameKey#&gt;)
+        try &lt;#nestedContainer#&gt;.encode(&lt;#nestedDescriptionKey#&gt;, forKey: .&lt;#nestedDescriptionKey#&gt;)
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>212AC9BF-4E5D-49E9-8267-FF72746708A9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Nested Codable template. This allows nested properties to be listed at the top level properties.</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Nested Codable Snippet</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
